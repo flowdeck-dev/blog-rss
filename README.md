@@ -2,7 +2,7 @@
 
 Generates an RSS 2.0 feed for the FlowDeck blog (https://flowdeck.studio/blog). Framer CMS has no RSS output, so the generator reads the public sitemap, scrapes each post's Open Graph tags and `<time datetime>`, and writes `public/rss.xml`.
 
-A scheduled GitHub Actions workflow (`generate-feed.yml`, daily 01:30 UTC, or run it manually) regenerates the file and commits it only when it changed. Serve `public/` as a static site at `feed.flowdeck.studio` (publish directory `public`, no build command).
+A scheduled GitHub Actions workflow (`generate-feed.yml`, daily 01:30 UTC, or run it manually) regenerates the file and commits it only when it changed. The same workflow deploys `public/` to GitHub Pages, served at `feed.flowdeck.studio` (CNAME to `flowdeck-dev.github.io`).
 
 ```sh
 npm test            # unit tests
