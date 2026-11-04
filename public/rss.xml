@@ -50,10 +50,10 @@
       <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Flowdeck Studio</title>
+      <title>MCP vs CLI for AI-powered iOS development</title>
       <link>https://flowdeck.studio/blog/mcp-vs-cli-for-ai-powered-ios-development</link>
       <guid isPermaLink="true">https://flowdeck.studio/blog/mcp-vs-cli-for-ai-powered-ios-development</guid>
-      <description>Flowdeck gives your agent a full Apple development environment: the build system, the simulators, the tests. Done means the app works, and the product calls stay yours.</description>
+      <description>Compare MCP and CLI for iOS agents: tool discovery, context, CI, structured output, and the build-test-simulator loop with current XcodeBuildMCP defaults.</description>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
@@ -64,10 +64,10 @@
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Flowdeck Studio</title>
+      <title>How to run iOS tests from the terminal</title>
       <link>https://flowdeck.studio/blog/how-to-run-ios-tests-from-the-terminal</link>
       <guid isPermaLink="true">https://flowdeck.studio/blog/how-to-run-ios-tests-from-the-terminal</guid>
-      <description>Flowdeck gives your agent a full Apple development environment: the build system, the simulators, the tests. Done means the app works, and the product calls stay yours.</description>
+      <description>Run iOS unit tests and UI tests from the terminal without memorizing xcodebuild flags. Discover tests, filter by target, and get structured CI output.</description>
       <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
