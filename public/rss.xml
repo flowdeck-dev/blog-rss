@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flowdeck Blog</title>
+    <link>https://flowdeck.studio</link>
+    <description>Guides and news on building iOS and macOS apps with AI agents and FlowDeck.</description>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 02 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://feed.flowdeck.studio/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flowdeck Vs Bitrig</title>
+      <link>https://flowdeck.studio/blog/flowdeck-vs-bitrig</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/flowdeck-vs-bitrig</guid>
+      <description>Bitrig gets an app to exist. Flowdeck is for the engineer who has to keep it working. A side-by-side on standards, validation, Xcode control, parallel agents and price.</description>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How to Run Multiple Claude Code Agents on the Same Xcode Project</title>
+      <link>https://flowdeck.studio/blog/run-multiple-claude-code-agents-xcode-project</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/run-multiple-claude-code-agents-xcode-project</guid>
+      <description>Learn how to run multiple Claude Code agents on the same Xcode project without simulator conflicts.   </description>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How to stream iOS simulator logs to your AI coding agent</title>
+      <link>https://flowdeck.studio/blog/log-streaming</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/log-streaming</guid>
+      <description>Your AI agent can</description>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>iOS UI automation: tap, type, screenshot</title>
+      <link>https://flowdeck.studio/blog/ui-automation</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/ui-automation</guid>
+      <description>Flowdeck</description>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>iOS simulator management for AI agents</title>
+      <link>https://flowdeck.studio/blog/simulator</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/simulator</guid>
+      <description>How iOS simulators outgrew simctl, and what Flowdeck does about it. Boot, install, screenshot, and automate the simulator from one CLI.</description>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Two agents, same task, same standards</title>
+      <link>https://flowdeck.studio/blog/two-agents-same-task-two-different-standards</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/two-agents-same-task-two-different-standards</guid>
+      <description>See how two coding agents handled the same iOS task under the same project standards, and what their build, test, and verification evidence revealed.</description>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Why AI agents fail at iOS development</title>
+      <link>https://flowdeck.studio/blog/why-your-ai-agent-keeps-failing-at-ios-development</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/why-your-ai-agent-keeps-failing-at-ios-development</guid>
+      <description>Why iOS coding agents fail: missing build, test, simulator, and log feedback. Learn the evidence loop that helps Claude Code and Codex verify changes reliably.</description>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>MCP vs CLI for AI-powered iOS development</title>
+      <link>https://flowdeck.studio/blog/mcp-vs-cli-for-ai-powered-ios-development</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/mcp-vs-cli-for-ai-powered-ios-development</guid>
+      <description>Compare MCP and CLI for iOS agents: tool discovery, context, CI, structured output, and the build-test-simulator loop with current XcodeBuildMCP defaults.</description>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>A modern simctl alternative for iOS simulators</title>
+      <link>https://flowdeck.studio/blog/a-modern-simctl-alternative-for-managing-ios-simulators</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/a-modern-simctl-alternative-for-managing-ios-simulators</guid>
+      <description>Replace xcrun simctl with a structured CLI. Boot, erase, install, launch, screenshot iOS simulators by name. No UDIDs. JSON output on every command.</description>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How to run iOS tests from the terminal</title>
+      <link>https://flowdeck.studio/blog/how-to-run-ios-tests-from-the-terminal</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/how-to-run-ios-tests-from-the-terminal</guid>
+      <description>Run iOS unit tests and UI tests from the terminal without memorizing xcodebuild flags. Discover tests, filter by target, and get structured CI output.</description>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Set up Claude Code and Codex for iOS development</title>
+      <link>https://flowdeck.studio/blog/how-to-set-up-claude-code-for-ios-development</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/how-to-set-up-claude-code-for-ios-development</guid>
+      <description>Set up Claude Code or Codex for iOS development with a structured build, run, test, Simulator, and log workflow. Includes concrete steps to verify a real screen.</description>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Autonomous iOS UI testing with Claude Code</title>
+      <link>https://flowdeck.studio/blog/autonomous-ios-ui-testing-with-claude-code</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/autonomous-ios-ui-testing-with-claude-code</guid>
+      <description>Build an iOS UI test loop in Claude Code: inspect accessibility, tap a real flow, assert the result, capture evidence, and fix failures.</description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Three ways to close the iOS agent loop</title>
+      <link>https://flowdeck.studio/blog/three-ways-to-close-the-ios-agent-loop</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/three-ways-to-close-the-ios-agent-loop</guid>
+      <description>Every guide on using Claude Code or Codex for iOS hits the same wall. Three approaches to closing the build-run-test loop, with honest tradeoffs.</description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

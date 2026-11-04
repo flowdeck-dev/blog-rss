@@ -1,0 +1,10 @@
+{
+  "name": "blog-rss",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}
