@@ -5,15 +5,8 @@
     <link>https://flowdeck.studio</link>
     <description>Guides and news on building iOS and macOS apps with AI agents and FlowDeck.</description>
     <language>en-US</language>
-    <lastBuildDate>Mon, 02 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://feed.flowdeck.studio/rss.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Flowdeck Vs Bitrig</title>
-      <link>https://flowdeck.studio/blog/flowdeck-vs-bitrig</link>
-      <guid isPermaLink="true">https://flowdeck.studio/blog/flowdeck-vs-bitrig</guid>
-      <description>Bitrig gets an app to exist. Flowdeck is for the engineer who has to keep it working. A side-by-side on standards, validation, Xcode control, parallel agents and price.</description>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
-    </item>
     <item>
       <title>How to Run Multiple Claude Code Agents on the Same Xcode Project</title>
       <link>https://flowdeck.studio/blog/run-multiple-claude-code-agents-xcode-project</link>
@@ -57,10 +50,10 @@
       <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>MCP vs CLI for AI-powered iOS development</title>
+      <title>Flowdeck Studio</title>
       <link>https://flowdeck.studio/blog/mcp-vs-cli-for-ai-powered-ios-development</link>
       <guid isPermaLink="true">https://flowdeck.studio/blog/mcp-vs-cli-for-ai-powered-ios-development</guid>
-      <description>Compare MCP and CLI for iOS agents: tool discovery, context, CI, structured output, and the build-test-simulator loop with current XcodeBuildMCP defaults.</description>
+      <description>Flowdeck gives your agent a full Apple development environment: the build system, the simulators, the tests. Done means the app works, and the product calls stay yours.</description>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
@@ -71,10 +64,10 @@
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>How to run iOS tests from the terminal</title>
+      <title>Flowdeck Studio</title>
       <link>https://flowdeck.studio/blog/how-to-run-ios-tests-from-the-terminal</link>
       <guid isPermaLink="true">https://flowdeck.studio/blog/how-to-run-ios-tests-from-the-terminal</guid>
-      <description>Run iOS unit tests and UI tests from the terminal without memorizing xcodebuild flags. Discover tests, filter by target, and get structured CI output.</description>
+      <description>Flowdeck gives your agent a full Apple development environment: the build system, the simulators, the tests. Done means the app works, and the product calls stay yours.</description>
       <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
     </item>
     <item>

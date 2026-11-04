@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import { blogUrlsFromSitemap, buildFeed, parsePost } from "../src/feed.mjs";
+import { articlesFromBlogIndex, buildFeed, parsePost } from "../src/feed.mjs";
 import { get } from "../src/http.mjs";
 
 const SITE_URL = "https://flowdeck.studio";
@@ -9,19 +9,18 @@ const FEED_URL = process.env.FEED_URL ?? "https://feed.flowdeck.studio/rss.xml";
 const OUTPUT = "public/rss.xml";
 const BATCH_SIZE = 5;
 
-const sitemap = await get(`${SITE_URL}/sitemap.xml`);
-const urls = blogUrlsFromSitemap(sitemap, SITE_URL);
-if (urls.length === 0) throw new Error("Sitemap has no blog URLs; refusing to overwrite the feed");
+const articles = articlesFromBlogIndex(await get(`${SITE_URL}/blog`), SITE_URL);
+if (articles.length === 0) throw new Error("Blog index lists no articles; refusing to overwrite the feed");
 
 const posts = [];
-for (let i = 0; i < urls.length; i += BATCH_SIZE) {
+for (let i = 0; i < articles.length; i += BATCH_SIZE) {
   const results = await Promise.allSettled(
-    urls.slice(i, i + BATCH_SIZE).map(async (url) => parsePost(url, await get(url), SITE_NAME)),
+    articles.slice(i, i + BATCH_SIZE).map(async (a) => parsePost(a, await get(a.url), SITE_NAME)),
   );
   results.forEach((r, j) => {
-    const url = urls[i + j];
+    const url = articles[i + j].url;
     if (r.status === "rejected") console.warn(`skip ${url}: ${r.reason.message}`);
-    else if (r.value === null) console.warn(`skip ${url}: not a dated post`);
+    else if (r.value === null) console.warn(`skip ${url}: no title`);
     else posts.push(r.value);
   });
 }

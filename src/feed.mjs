@@ -19,25 +19,37 @@ const metaContent = (html, attr, key) => {
   return "";
 };
 
-// Framer emits a <time datetime> for the post date and no article:published_time.
-// JSON-LD is kept as a fallback in case the template changes.
-const publishedDate = (html) => {
-  const raw =
-    html.match(/<time\b[^>]*\bdatetime=["']([^"']+)["']/i)?.[1] ??
-    html.match(/"datePublished"\s*:\s*"([^"]+)"/i)?.[1];
-  if (!raw) return null;
-  const date = new Date(raw);
-  return Number.isNaN(date.getTime()) ? null : date;
-};
-
 const stripSiteSuffix = (title, siteName) =>
   title.replace(new RegExp(`\\s*[|\\-–]\\s*${siteName}\\s*$`, "i"), "");
 
-/** Returns null when the page is not a dated blog post. */
-export function parsePost(url, html, siteName) {
-  const date = publishedDate(html);
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+const DATE_TEXT = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* (\d{1,2}), (20\d\d)\b/;
+
+/**
+ * Articles listed on the blog index, newest first as shown. The index is the source of truth:
+ * /learn guides also live under /blog/ URLs and sitemap.xml cannot tell them apart. Each card's
+ * date is the first date text after its link.
+ */
+export function articlesFromBlogIndex(html, siteUrl) {
+  const links = [...html.matchAll(/href="\.\/blog\/([^"#?]+)[^"]*"/g)];
+  const articles = new Map();
+  links.forEach((link, i) => {
+    const url = `${siteUrl}/blog/${link[1]}`;
+    if (articles.has(url)) return;
+    // A card repeats its link, so the date belongs to the text before the next different article.
+    const next = links.slice(i + 1).find((l) => l[1] !== link[1]);
+    const match = html.slice(link.index, next?.index ?? html.length).match(DATE_TEXT);
+    if (!match) return;
+    const month = MONTHS.indexOf(match[1].toLowerCase());
+    articles.set(url, new Date(Date.UTC(Number(match[3]), month, Number(match[2]))));
+  });
+  return [...articles].map(([url, date]) => ({ url, date }));
+}
+
+/** Returns null when the page has no title. */
+export function parsePost({ url, date }, html, siteName) {
   const title = stripSiteSuffix(metaContent(html, "property", "og:title"), siteName);
-  if (!date || !title) return null;
+  if (!title) return null;
   return {
     url,
     title,
@@ -46,13 +58,6 @@ export function parsePost(url, html, siteName) {
     image: metaContent(html, "property", "og:image"),
     date,
   };
-}
-
-/** Blog post URLs from a sitemap, excluding the blog index itself. */
-export function blogUrlsFromSitemap(xml, siteUrl) {
-  const prefix = `${siteUrl}/blog/`;
-  const urls = [...xml.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)].map((m) => m[1]);
-  return [...new Set(urls.filter((u) => u.startsWith(prefix) && u.length > prefix.length))];
 }
 
 export function buildFeed({ siteUrl, feedUrl, title, description, language, posts, now }) {

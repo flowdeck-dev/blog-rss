@@ -1,41 +1,45 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { blogUrlsFromSitemap, buildFeed, parsePost } from "../src/feed.mjs";
+import { articlesFromBlogIndex, buildFeed, parsePost } from "../src/feed.mjs";
 
-const page = (extra = "") => `<html><head>
+const page = `<html><head>
 <meta property="og:title" content="Fast &amp; Easy | Flowdeck">
 <meta property="og:description" content="It&#39;s &quot;fast&quot;">
 <meta property="og:image" content="https://img.example/a.jpg?width=1&amp;height=2">
-${extra}</head><body><time datetime="2026-10-06T00:00:00.000Z">Oct 6, 2026</time></body></html>`;
+</head></html>`;
+const date = new Date("2026-10-06T00:00:00.000Z");
 
 test("parsePost reads Open Graph tags, decodes entities, and strips the site suffix", () => {
-  const post = parsePost("https://s.test/blog/a", page(), "Flowdeck");
+  const post = parsePost({ url: "https://s.test/blog/a", date }, page, "Flowdeck");
   assert.equal(post.title, "Fast & Easy");
   assert.equal(post.description, `It's "fast"`);
   assert.equal(post.image, "https://img.example/a.jpg?width=1&height=2");
-  assert.equal(post.date.toISOString(), "2026-10-06T00:00:00.000Z");
+  assert.equal(post.date, date);
 });
 
-test("parsePost falls back to JSON-LD datePublished", () => {
-  const html = `<meta property="og:title" content="T">
-<script type="application/ld+json">{"datePublished":"2026-01-02T03:04:05Z"}</script>`;
-  assert.equal(parsePost("u", html, "Flowdeck").date.toISOString(), "2026-01-02T03:04:05.000Z");
+test("parsePost falls back to the meta description and returns null without a title", () => {
+  const html = `<meta property="og:title" content="T"><meta name="description" content="D">`;
+  assert.equal(parsePost({ url: "u", date }, html, "Flowdeck").description, "D");
+  assert.equal(parsePost({ url: "u", date }, "<html></html>", "Flowdeck"), null);
 });
 
-test("parsePost returns null for pages without a date or title", () => {
-  assert.equal(parsePost("u", `<meta property="og:title" content="T">`, "Flowdeck"), null);
-  assert.equal(parsePost("u", `<time datetime="2026-01-01">x</time>`, "Flowdeck"), null);
-});
-
-test("blogUrlsFromSitemap keeps blog posts only, without the index or duplicates", () => {
-  const xml = `<urlset>
-<url><loc>https://s.test/blog</loc></url>
-<url><loc>https://s.test/blog/</loc></url>
-<url><loc>https://s.test/blog/a</loc></url>
-<url><loc>https://s.test/blog/a</loc></url>
-<url><loc>https://s.test/changelog/x</loc></url>
-<url><loc>https://www.s.test/blog/b</loc></url></urlset>`;
-  assert.deepEqual(blogUrlsFromSitemap(xml, "https://s.test"), ["https://s.test/blog/a"]);
+test("articlesFromBlogIndex returns each linked article once with its card date, ignoring other links", () => {
+  const html = `
+<a href="./blog/newer"><h3>Newer</h3></a><span>Oct 29, 2026</span>
+<a href="./blog/newer"><h3>Newer</h3></a><span>Oct 29, 2026</span>
+<a href="./blog/older?x=1#y">Older</a><p>Apr 1, 2026</p>
+<a href="./blog/no-date">No date</a>
+<a href="./learn/videos">Videos</a>
+<a href="./blog/after">After</a><span>Mar 2, 2026</span>`;
+  const articles = articlesFromBlogIndex(html, "https://s.test");
+  assert.deepEqual(
+    articles.map((a) => [a.url, a.date.toISOString()]),
+    [
+      ["https://s.test/blog/newer", "2026-10-29T00:00:00.000Z"],
+      ["https://s.test/blog/older", "2026-04-01T00:00:00.000Z"],
+      ["https://s.test/blog/after", "2026-03-02T00:00:00.000Z"],
+    ],
+  );
 });
 
 const feedInput = (posts) => ({
