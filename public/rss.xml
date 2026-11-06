@@ -11,7 +11,7 @@
       <title>How to Run Multiple Claude Code Agents on the Same Xcode Project</title>
       <link>https://flowdeck.studio/blog/run-multiple-claude-code-agents-xcode-project</link>
       <guid isPermaLink="true">https://flowdeck.studio/blog/run-multiple-claude-code-agents-xcode-project</guid>
-      <description>Learn how to run multiple Claude Code agents on the same Xcode project without simulator conflicts.   </description>
+      <description>Flowdeck Studio lets you run multiple Claude Code agents on the same Xcode project in parallel, with separate Git worktrees, build data, and a dedicated simulator for each session.</description>
       <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
