@@ -5,8 +5,15 @@
     <link>https://flowdeck.studio</link>
     <description>Guides and news on building iOS and macOS apps with AI agents and FlowDeck.</description>
     <language>en-US</language>
-    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://feed.flowdeck.studio/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Make Claude Code Validate its work</title>
+      <link>https://flowdeck.studio/blog/claude-code-validate-ios-changes-code-review</link>
+      <guid isPermaLink="true">https://flowdeck.studio/blog/claude-code-validate-ios-changes-code-review</guid>
+      <description>Flowdeck Studio helps developers validate Claude Code changes in iOS apps before code review with built-in testing, simulator checks, screenshots, and validation reports.</description>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>How to Run Multiple Claude Code Agents on the Same Xcode Project</title>
       <link>https://flowdeck.studio/blog/run-multiple-claude-code-agents-xcode-project</link>
