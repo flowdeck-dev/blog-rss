@@ -5,15 +5,8 @@
     <link>https://flowdeck.studio</link>
     <description>Guides and news on building iOS and macOS apps with AI agents and FlowDeck.</description>
     <language>en-US</language>
-    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://feed.flowdeck.studio/rss.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Git Worktrees Explained: What iOS Developers Need to Know</title>
-      <link>https://flowdeck.studio/blog/git-worktrees</link>
-      <guid isPermaLink="true">https://flowdeck.studio/blog/git-worktrees</guid>
-      <description>Git worktrees let you check out branches from one repository in separate folders, and Flowdeck Studio uses them to run parallel Claude Code sessions on Xcode projects.</description>
-      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
-    </item>
     <item>
       <title>How to Make Claude Code Validate its work</title>
       <link>https://flowdeck.studio/blog/claude-code-validate-ios-changes-code-review</link>
